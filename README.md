@@ -1,6 +1,8 @@
-# FULL_ADDER_SUBTRACTOR
+### FULL_ADDER_SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
+### NAME: MURALI S
+### REG NO :212222230088
 
 **AIM:**
 
@@ -37,64 +39,62 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+### FULL ADDER
+![image](https://github.com/user-attachments/assets/5e3486b4-8d0e-438e-9bea-93cba27e24b9)
 
-
-Full Adder
-
-![image](https://github.com/AshwinKumar-Saveetha/FULL_ADDER_SUBTRACTOR/assets/155129814/e5e9b28c-8569-4f22-8d9a-f00f3791d592)
-
-
-Full Subtractor
-
-![image](https://github.com/AshwinKumar-Saveetha/FULL_ADDER_SUBTRACTOR/assets/155129814/a549746d-5b01-4493-af45-09d21f7b1b39)
+### FULL SUBTRACTOR
+![image](https://github.com/user-attachments/assets/bf0954ef-e8db-414a-a9f9-92530d5779e0)
 
 **Procedure**
 
-Full adder
-
-1.Open Quartus II and create a new project.
-
-2.Use schematic design entry to draw the full adder circuit.
-
-3.The circuit consists of XOR, AND, and OR gates.
-
-4.Compile the design, verify its functionality through simulation.
-
-5.Implement the design on the target device and program it.
-
-Full subtractor
-
-1.Follow the same steps as for the full adder.
-
-2.Draw the full subtractor circuit using schematic design.
-
-3.The circuit includes XOR, AND, OR gates to perform subtraction.
-
-4.Compile, simulate, implement, and program the design similarly to the full adder.
+1.Open Quartus Software
+2.Create a New Project
+3.Create a New Design File
+4.Compile the Program
+5.Generate RTL Schematic
+6.Create Nodes for Inputs/Outputs
+7.Generate Timing Diagram
+8.Simulate Different Input Combinations
+9.Save Your Work
 
 **Program:**
-
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-
-Developed by: MURALI S
-
-RegisterNumber: 212222230088
+### FULL ADDER
 ```
-module Fulladdsub(a,b,cin,sum,carry,BO,DIFF);
+module ex04(a,b,cin,sum,carry);
 input a,b,cin;
-output sum,carry,BO,DIFF;
+output sum,carry;
 assign sum=(a^b^cin);
-assign carry=(a&b)|(a&cin)|(b&cin);
-assign DIFF=(a^b^cin);
-assign BO=(~a&b)|(~(a^b)& cin);
+assign carry=((a&b) | (b&cin) | (cin&a));
 endmodule
 ```
-**RTL Schematic**
 
-![Screenshot 2024-03-19 143953](https://github.com/AshwinKumar-Saveetha/FULL_ADDER_SUBTRACTOR/assets/155129814/80d06b2e-6dbd-4f67-bf6b-d99f13b77d0c)
+### FULL SUBTRACTOR
+```
+module ex04.2(a,b,bin,borr,diff);
+input a,b,bin;
+output borr,diff;
+assign diff=(a^b^bin);
+assign borr=((~a&b) | (b&bin) | (bin&~a));
+endmodule
+
+```
+**RTL Schematic**
+### FULL ADDER
+![image](https://github.com/user-attachments/assets/f0ec5086-42d4-4720-a397-0986b4c37590)
+
+
+### FULL SUBTRACTOR
+![image](https://github.com/user-attachments/assets/d5123ac4-391b-4cc5-b510-a7ac49341448)
+
 
 **Output Timing Waveform**
-![Screenshot 2024-03-19 143850](https://github.com/AshwinKumar-Saveetha/FULL_ADDER_SUBTRACTOR/assets/155129814/0cc2e5bb-12b2-4593-a282-e444ee12875f)
+### FULL ADDER
+![image](https://github.com/user-attachments/assets/8f972f88-f2b6-4860-be1f-94b91f676ff1)
+
+
+### FULL SUBTRACTOR
+![image](https://github.com/user-attachments/assets/fe8b5442-62d3-4cf2-adb1-d51ff4a31ef9)
+
 
 **Result:**
 
